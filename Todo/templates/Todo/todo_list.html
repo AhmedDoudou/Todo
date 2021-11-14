@@ -1,0 +1,28 @@
+
+
+{% extends "base.html" %}
+{% block content %}
+
+<p>
+    {% if request.user.is_authenticated%}
+        Welcome : {{request.user.username}}
+    {%else%}
+        Welcome Anonymous
+    {%endif%}
+    </p>
+<div class="container my-3" > 
+     {% for todo in todo_list %}
+        <div class="card text-white bg-warning mb-3 text-cnter" style="max-width: 18rem;">
+            <div class="card-header">Todo</div>
+            <div class="card-body">
+    
+            <h5 class="card-title"> <a href="/{{todo.id}}"> {{ todo.name }}</a></h5>
+            <p class="card-text">{{ todo.due_date }}</p>
+        
+            </div>
+        </div>
+    {% endfor %}
+        <a class="btn btn-primary" href="/create">Create Todo <a/>
+</div>  
+    {% endblock content %}
+   

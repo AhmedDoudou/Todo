@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+{% extends "base.html" %}
+
+    
+{% block content %}
+<div class="container my-3">
+<a href="/" class="btn btn-outline-info">Go Home </a>
+<div class="card text-white bg-info mb-3 my-3" style="max-width: 18rem;">
+  <div class="card-header">{{todo.name}}</div>
+  <div class="card-body">
+    <h5 class="card-title">{{todo.due_date}}</h5>
+  </div>
+    <a href="update/" class="btn btn-outline-success "> Update </a>
+    <a href="delete/" class="btn btn-outline-danger"> Delete </a>
+</div>
+</div>
+</div>
+{% endblock content %}
+
+    
+    
+
+
